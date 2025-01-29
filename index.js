@@ -70,10 +70,10 @@ clear.addEventListener("click", () => {
     output.value = "";
 })
 
-select.addEventListener("change", () => {
-    if (input.value == 0) {
-        input.value = "";
-    }
-    let calc = new Calculator();
-    calc.trigonometry(select.value)
-})
+// select.addEventListener("change", () => {
+//     if (input.value == 0) {
+//         input.value = "";
+//     }
+//     let calc = new Calculator();
+//     calc.trigonometry(select.value)
+// })
