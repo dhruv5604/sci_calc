@@ -4,18 +4,6 @@ class Calculator {
 
     evaluate(expression,e) {
 
-        if(input.value.includes('^') && e.target.value == "^"){
-            console.log("I am dhruv")
-            return
-        }
-
-        if (input.value.includes('^') ){
-            let temp = input.value.split('^');
-            let result = Math.pow(10, temp[1]);
-            output.value = result;
-            return;
-        }
-
         let result = eval(input.value);
         output.value = result;
         // this.isDegree = true;
@@ -39,39 +27,49 @@ class Calculator {
 
     trigonometry(func) {
         let temp = input.value + func;
-        console.log(temp)
+        // console.log(temp)
         let value = this.extractNumberBeforeTrig(temp);
         switch (func) {
-            case 'sin': // 1 + 90sin
-                input.value = temp.slice(0, func.length - 1);
-                input.value += Math.sin(this.toRadians(value)).toFixed(2)
+            case 'sin': {
+                let result = Math.sin(this.toRadians(value)).toFixed(2);
+                let tempInput = input.value.slice(0, input.value.length - value.length);
+                input.value = tempInput + result;
                 break;
-            case 'cos':
-                input.value = temp.slice(0, func.length - 1);
-                input.value += Math.cos(this.toRadians(value)).toFixed(2)
+            }
+            case 'cos': {
+                let result = Math.cos(this.toRadians(value)).toFixed(2);
+                let tempInput = input.value.slice(0, input.value.length - value.length);
+                input.value = tempInput + result;
                 break;
-            case 'tan':
-                input.value = temp.slice(0, func.length - 1);
-                input.value += Math.tan(this.toRadians(value)).toFixed(2)
+            }
+            case 'tan': {
+                let result = Math.tan(this.toRadians(value)).toFixed(2);
+                let tempInput = input.value.slice(0, input.value.length - value.length);
+                input.value = tempInput + result;
                 break;
-            case 'cot':
-                input.value = temp.slice(0, func.length - 1);
-                input.value += 1 / (Math.tan(this.toRadians(value)).toFixed(2))
+            }
+            case 'cot':{
+                let result = 1/(Math.tan(this.toRadians(value)).toFixed(2));
+                let tempInput = input.value.slice(0, input.value.length - value.length);
+                input.value = tempInput + result;
                 break;
-            case 'sec':
-                input.value = temp.slice(0, func.length - 1);
-                input.value += 1 / (Math.cos(this.toRadians(value)).toFixed(2))
+            }
+            case 'sec': {
+                let result = 1/(Math.cos(this.toRadians(value)).toFixed(2));
+                let tempInput = input.value.slice(0, input.value.length - value.length);
+                input.value = tempInput + result;
                 break;
-            case 'cosec':
-                input.value = temp.slice(0, func.length - 1);
-                input.value += 1 / (Math.sin(this.toRadians(value)).toFixed(2))
+            }
+            case 'cosec': {
+                let result = 1/(Math.sin(this.toRadians(value)).toFixed(2));
+                let tempInput = input.value.slice(0, input.value.length - value.length);
+                input.value = tempInput + result;
                 break;
+            }
             default:
                 output.value = "Invalid Input"
         }
     }
 }
-
-
 
 export {Calculator};

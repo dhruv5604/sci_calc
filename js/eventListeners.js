@@ -55,7 +55,13 @@ for (let btn of btns) {
             calc.onebyx(input.value);
         }
 
-        if(btn.id == "x^y"){
+        if(btn.id == "powerof10"){
+            let calc = new Calculator();
+            calc.powerof10(input.value);
+        }
+
+        if(btn.id == "signChange"){
+            output.value = String(Number(output.value)*-1)
         }
 
         input.value += e.target.value;
@@ -81,7 +87,6 @@ select.addEventListener("change", () => {
     }
     let calc = new Calculator();
     calc.trigonometry(select.value)
-    
 })
 
 backspace.addEventListener("click",() => {

@@ -8,10 +8,8 @@ let nbtns = document.getElementsByClassName("nbtn");
 let bbtns = document.getElementsByClassName("bbtn");
 let clear = document.getElementById("clear");
 let select = document.getElementById("trigonometry");
-let power_10 = document.getElementById('10power');
-let x2 = document.getElementById("x2");
 let backspace = document.getElementById("backspace");
-let onebyx = document.getElementById("1/x");
+let signChange = document.getElementById("signChange");
 
 Calculator.prototype.abs = (expression) => {
     let lastNum = getLastNumber(expression)
@@ -61,12 +59,12 @@ Calculator.prototype.onebyx = (expression) => {
     input.value = tempInput + result;
 }
 
-Calculator.prototype.xpowy = (expression) => {
+Calculator.prototype.powerof10 = (expression) => {
     let lastNum = getLastNumber(expression)
-    console.log("from",lastNum);
+    let result = Math.pow(10,lastNum);
     let tempInput = input.value.slice(0, input.value.length - lastNum.length);
-    // input.value = tempInput + result;
-} 
+    input.value = tempInput + result;
+}
 
 function getLastNumber(expression) {
     let parts = expression.split(/[^0-9]/); // Split by any non-numeric character
