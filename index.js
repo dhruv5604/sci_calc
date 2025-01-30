@@ -6,11 +6,24 @@ let nbtns = document.getElementsByClassName("nbtn");
 let bbtns = document.getElementsByClassName("bbtn");
 let clear = document.getElementById("clear");
 let select = document.getElementById("trigonometry");
+let power_10 = document.getElementById('10power');
 
 //Class
 class Calculator {
 
     evaluate() {
+
+        if(input.value.includes('^')){
+            let temp = input.value.split('^');
+            console.log(temp);
+
+            let result = Math.pow(10,temp[1]);
+            // input.value = input.value.split();
+            // input.value += result;
+            output.value = result;
+            return;
+        }
+
         let result = eval(input.value);
         output.value = result;
         // this.isDegree = true;
@@ -20,29 +33,39 @@ class Calculator {
         return (angle * Math.PI) / 180;
     }
 
+    extractNumberBeforeTrig(expression) {
+        let match = expression.match(/(\d+)(?=(sin|cos|tan|cot|sec|cosec))/);
+        return match ? match[1] : null; // Returns the number before trigonometry function
+    }
+
     trigonometry(func) {
         let temp = input.value + func;
         console.log(temp)
-        // let value =  
+        let value =  this.extractNumberBeforeTrig(temp);
         switch (func) {
             case 'sin': // 1 + 90sin
-                output.value = Math.sin(this.toRadians(value))
-
+                input.value = temp.slice(0,func.length-1);
+                input.value += Math.sin(this.toRadians(value)).toFixed(2)
                 break;
             case 'cos':
-                output.value = Math.cos(this.toRadians(value))
+                input.value = temp.slice(0,func.length-1);
+                input.value += Math.cos(this.toRadians(value)).toFixed(2)
                 break;
             case 'tan':
-                output.value = Math.tan(this.toRadians(value))
+                input.value = temp.slice(0,func.length-1);
+                input.value += Math.tan(this.toRadians(value)).toFixed(2)
                 break;
-            case 'tan':
-                output.value = 1/(Math.tan(this.toRadians(value)))
+            case 'cot':
+                input.value = temp.slice(0,func.length-1);
+                input.value += 1/(Math.tan(this.toRadians(value)).toFixed(2))
                 break;
-            case 'cos':
-                output.value = 1/(Math.cos(this.toRadians(value)))
+            case 'sec':
+                input.value = temp.slice(0,func.length-1);
+                input.value += 1/(Math.cos(this.toRadians(value)).toFixed(2))
                 break;
             case 'cosec':
-                output.value = 1/(Math.sin(this.toRadians(value)))    
+                input.value = temp.slice(0,func.length-1);
+                input.value += 1/(Math.sin(this.toRadians(value)).toFixed(2))
                 break;
             default:
                 output.value = "Invalid Input"    
