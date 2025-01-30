@@ -1,13 +1,13 @@
-.contanier{
+.contanier {
     max-width: 350px;
     width: fit-content;
     background-color: #f0f0f0;
     padding: 20px;
     border-radius: 10px;
-    margin:auto;        
+    margin: auto;
 }
 
-input[type=text]{
+input[type=text] {
     width: 90%;
     padding: 10px;
     text-align: right;
@@ -25,24 +25,24 @@ input[type=text]{
     margin: 0 0px 10px 5px;
 }
 
-select{
+select {
     padding: 5px;
 }
 
-.btnCalc{
+.btnCalc {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.btns{
+.btns {
     width: 350px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-button{
+button {
     margin: 3px;
     width: 63px;
     border: none;
@@ -52,10 +52,10 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+button:hover {
     border: 1px solid black;
 }
 
-button:active{
+button:active {
     transform: scale(0.9);
-}       
+}

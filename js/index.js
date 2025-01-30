@@ -1,4 +1,4 @@
-import {Calculator} from './calculator.js'
+import { Calculator } from './calculator.js'
 
 var input = document.getElementById("ip");
 var output = document.getElementById("op");
@@ -54,14 +54,14 @@ Calculator.prototype.fact = (expression) => {
 
 Calculator.prototype.onebyx = (expression) => {
     let lastNum = getLastNumber(expression)
-    let result = 1/lastNum;
+    let result = 1 / lastNum;
     let tempInput = input.value.slice(0, input.value.length - lastNum.length);
     input.value = tempInput + result;
 }
 
 Calculator.prototype.powerof10 = (expression) => {
     let lastNum = getLastNumber(expression)
-    let result = Math.pow(10,lastNum);
+    let result = Math.pow(10, lastNum);
     let tempInput = input.value.slice(0, input.value.length - lastNum.length);
     input.value = tempInput + result;
 }
@@ -71,4 +71,4 @@ function getLastNumber(expression) {
     return parts.filter(num => num !== "").pop(); // Get the last valid number
 }
 
-export { input,output,btns,clear,select,equal,getLastNumber,backspace};
+export { input, output, btns, clear, select, equal, getLastNumber, backspace };

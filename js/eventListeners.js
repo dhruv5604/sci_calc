@@ -1,4 +1,4 @@
-import {input,output,equal,btns,clear,select,backspace} from './index.js'
+import { input, output, equal, btns, clear, select, backspace } from './index.js'
 import { Calculator } from './calculator.js';
 
 //Adding click event for all the buttons
@@ -50,18 +50,23 @@ for (let btn of btns) {
             calc.exp(input.value)
         }
 
-        if (btn.id == "1/x"){
+        if (btn.id == "1/x") {
             let calc = new Calculator();
             calc.onebyx(input.value);
         }
 
-        if(btn.id == "powerof10"){
+        if (btn.id == "powerof10") {
             let calc = new Calculator();
             calc.powerof10(input.value);
         }
 
-        if(btn.id == "signChange"){
-            output.value = String(Number(output.value)*-1)
+        if (btn.id == "signChange") {
+            output.value = String(Number(output.value) * -1)
+        }
+
+        if(btn.id == "e_btn"){
+            let calc = new Calculator();
+            calc.e_btn(input.value);
         }
 
         input.value += e.target.value;
@@ -72,7 +77,7 @@ for (let btn of btns) {
 equal.addEventListener("click", (e) => {
     // console.log("hello")
     let calc = new Calculator(input);
-    calc.evaluate(input.value,e);
+    calc.evaluate(input.value, e);
 })
 
 //adding event listener to clear button
@@ -87,8 +92,9 @@ select.addEventListener("change", () => {
     }
     let calc = new Calculator();
     calc.trigonometry(select.value)
+    select.value = "trigonometry"
 })
 
-backspace.addEventListener("click",() => {
-    input.value = input.value.slice(0,input.value.length-1);
+backspace.addEventListener("click", () => {
+    input.value = input.value.slice(0, input.value.length - 1);
 })
