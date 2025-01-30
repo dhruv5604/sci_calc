@@ -4,12 +4,9 @@ var input = document.getElementById("ip");
 var output = document.getElementById("op");
 let equal = document.getElementById("ebtn");
 let btns = document.querySelectorAll("button")
-let nbtns = document.getElementsByClassName("nbtn");
-let bbtns = document.getElementsByClassName("bbtn");
 let clear = document.getElementById("clear");
 let select = document.getElementById("trigonometry");
 let backspace = document.getElementById("backspace");
-let signChange = document.getElementById("signChange");
 
 Calculator.prototype.abs = (expression) => {
     let lastNum = getLastNumber(expression)
@@ -21,14 +18,14 @@ Calculator.prototype.abs = (expression) => {
 Calculator.prototype.logNum = (expression) => {
     let lastNum = getLastNumber(expression)
     let result = Math.log(lastNum);
-    let tempInput = input.value.slice(0, input.value.length - lastNum.length);
+    let tempInput = input.value.slice(0, input.value.length - lastNum.length).toFixed(4);
     input.value = tempInput + result;
 }
 
 Calculator.prototype.sqrt = (expression) => {
     let lastNum = getLastNumber(expression)
     let result = Math.sqrt(lastNum);
-    let tempInput = input.value.slice(0, input.value.length - lastNum.length);
+    let tempInput = input.value.slice(0, input.value.length - lastNum.length).toFixed(4);
     input.value = tempInput + result;
 }
 

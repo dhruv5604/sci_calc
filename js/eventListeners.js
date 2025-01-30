@@ -1,14 +1,13 @@
 import { input, output, equal, btns, clear, select, backspace } from './index.js'
 import { Calculator } from './calculator.js';
+import { mr, ms,mplus,mminus,mclr } from './memoryFunc.js';
 
 //Adding click event for all the buttons
 for (let btn of btns) {
     btn.addEventListener("click", (e) => {
 
         //if initially input is 0 then make it empty
-        if (input.value == 0) {
-            input.value = "";
-        }
+        
 
         // if x^2 is pressed then this func is called
         if (btn.id == "x2") {
@@ -69,7 +68,33 @@ for (let btn of btns) {
             calc.e_btn(input.value);
         }
 
+        if(btn.id == "ms"){
+            ms();
+        }
+        if(btn.id == "mr"){
+            mr();
+        }
+        if(btn.id == "mplus"){
+            mplus();
+        }
+        if(btn.id == "mminus"){
+            mminus();
+        }
+        if(btn.id == "mclr"){
+            mclr();
+        }
+
+        if(btn.id == "."){
+            if(input.value == 0){
+                input.value = "0.";
+            }
+        }
+
         input.value += e.target.value;
+
+        if (input.value.length == 0) {
+            input.value = "";
+        }
     })
 }
 
