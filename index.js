@@ -21,10 +21,13 @@ class Calculator {
     }
 
     trigonometry(func) {
-        let value = input.value;
+        let temp = input.value + func;
+        console.log(temp)
+        // let value =  
         switch (func) {
-            case 'sin':
+            case 'sin': // 1 + 90sin
                 output.value = Math.sin(this.toRadians(value))
+
                 break;
             case 'cos':
                 output.value = Math.cos(this.toRadians(value))
@@ -70,10 +73,10 @@ clear.addEventListener("click", () => {
     output.value = "";
 })
 
-// select.addEventListener("change", () => {
-//     if (input.value == 0) {
-//         input.value = "";
-//     }
-//     let calc = new Calculator();
-//     calc.trigonometry(select.value)
-// })
+select.addEventListener("change", () => {
+    if (input.value == 0) {
+        input.value = "";
+    }
+    let calc = new Calculator();
+    calc.trigonometry(select.value)
+})
