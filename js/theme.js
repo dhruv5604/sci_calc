@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         container.style.backgroundColor = "#222";
         container.style.color = "#fff";
         buttons.forEach(button => button.style.color = "white");
-        inputFields.forEach(input => input.style.backgroundColor = "#");
+        inputFields.forEach(input => input.style.backgroundColor = "#fcfcfc");
         toggleSwitch.checked = true;
     }
 
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             container.style.backgroundColor = "#222";
             container.style.color = "#fff";
             buttons.forEach(button => button.style.color = "black");
-            inputFields.forEach(input => input.style.backgroundColor = "#fff");
+            inputFields.forEach(input => input.style.backgroundColor = "#fcfcfc");
             localStorage.setItem("theme", "dark");
         } else {
             body.classList.remove("dark-mode");

@@ -88,16 +88,11 @@ for (let btn of btns) {
             mclr();
         }
 
-        //if initial value is 0
-        if (input.value == 0) {
-            input.value = "";
-        }
         if(btn.id != "degrad"){
             input.value += e.target.value;
         }else{
-            input.value = 0
+            input.value = ""
         }
-        
     })
 }
 
@@ -110,7 +105,7 @@ equal.addEventListener("click", (e) => {
 
 //adding event listener to clear button
 clear.addEventListener("click", () => {
-    input.value = 0;
+    input.value = "";
     output.value = "";
 })
 

@@ -28,6 +28,7 @@ class Calculator {
         let value = this.extractNumberBeforeTrig(temp);
         let result = ""
         let tempInput = ""
+        let tempAns = ""
         const redianValue = this.toRadians(value);
         switch (func) {
             case 'sin':
@@ -49,19 +50,22 @@ class Calculator {
                 break;
 
             case 'cot':
-                result = (deg.value == "enable") ? (1 / (Math.tan(redianValue))).toFixed(2) : Math.tan(value).toFixed(2);
+                tempAns = (deg.value == "enable") ? Math.tan(redianValue).toFixed(2) : Math.tan(value).toFixed(2);
+                result = 1/tempAns;
                 tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
 
             case 'sec':
-                result = (deg.value == "enable") ? (1 / (Math.cos(redianValue))).toFixed(2) : Math.cos(value).toFixed(2);
+                tempAns = (deg.value == "enable") ? Math.cos(redianValue).toFixed(2) : Math.cos(value).toFixed(2);
+                result = 1/tempAns;
                 tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
 
             case 'cosec':
-                result = (deg.value == "enable") ? (1 / (Math.sin(redianValue))).toFixed(2) : Math.sin(value).toFixed(2);
+                tempAns = (deg.value == "enable") ? Math.sin(redianValue).toFixed(2) : Math.sin(value).toFixed(2);
+                result = 1/tempAns;
                 tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;

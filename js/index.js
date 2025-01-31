@@ -8,9 +8,11 @@ const clear = document.getElementById("clear");
 const select = document.getElementById("trigonometry");
 const backspace = document.getElementById("backspace");
 const deg = document.getElementById("degrad");
+const zero = document.getElementById("zero");
 
 Calculator.prototype.abs = (expression) => {
     let lastNum = getLastNumber(expression)
+    console.log(lastNum)
     let result = Math.abs(lastNum);
     let tempInput = input.value.slice(0, input.value.length - lastNum.length);
     input.value = tempInput + result;
@@ -76,4 +78,4 @@ function getLastNumber(expression) {
     return parts.filter(num => num !== "").pop(); // Get the last valid number
 }
 
-export { input, output, btns, clear, select, equal, deg, getLastNumber, backspace };
+export { input, output, btns, clear, select, equal, deg, getLastNumber, backspace, zero };
