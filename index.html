@@ -10,77 +10,87 @@
 
 <body>
     <div class="contanier">
-        <input type="text" id="ip" value="0"/>
+        <input type="text" id="ip" />
         <input type="text" id="op" maxlength="20" readonly>
 
         <div class="btnCalc">
             <select name="trigonometry" id="trigonometry">
-                <option value="trigonometry" selected >Trigonometry</option>
+                <option value="trigonometry" selected disabled>Trigonometry</option>
                 <option value="sin">Sin</option>
                 <option value="cos">Cos</option>
                 <option value="tan">Tan</option>
                 <option value="cot">Cot</option>
-                <option value="cos">Cos</option>
+                <option value="sec">Sec</option>
                 <option value="cosec">Cosec</option>
             </select>
 
-            <button id="degrad">DEG</button>
+            <div class="toggle">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            
+            <button id="degrad" value="disable">DEG</button>
 
             <div class="btns">
-            
-                    <button class="mbtn">MC</button>
-                    <button class="mbtn">MR</button>
-                    <button class="mbtn">M+</button>
-                    <button class="mbtn">M-</button>
-                    <button class="mbtn">MS</button>
-                
-                    <button class="cbtn">2<sup>nd</sup></button>
-                    <button class="cbtn">&pi;</button>
-                    <button class="cbtn">e</button>
-                    <button id="clear">C</button>
-                    <button class="cbtn">&#x232b;</button>
-                
-                    <button class="cbtn">x<sup>2</sup></button>
-                    <button class="cbtn">1/x</button>
-                    <button class="cbtn">|x|</button>
-                    <button class="cbtn">exp</button>
-                    <button class="cbtn">mod</button>
-                
-                    <button class="cbtn">&radic;x</button>
-                    <button class="cbtn">(</button>
-                    <button class="cbtn">)</button>
-                    <button class="cbtn">&#119899;!</button>
-                    <button class="bbtn" value="/">÷</button>
-              
-                    <button class="cbtn" >x<sup>y</sup></button>
-                    <button class="nbtn" value="7">7</button>
-                    <button class="nbtn" value="8">8</button>
-                    <button class="nbtn" value="9">9</button>
-                    <button class="bbtn" value="*">x</button>
-                
-                    <button class="cbtn" id="10power" value="10^">10<sup>x</sup></button>
-                    <button class="nbtn" value="4">4</button>
-                    <button class="nbtn" value="5">5</button>
-                    <button class="nbtn" value="6">6</button>
-                    <button class="bbtn" value="-">-</button>
-               
-                    <button class="cbtn">log</button>
-                    <button class="nbtn" value="1">1</button>
-                    <button class="nbtn" value="2">2</button>
-                    <button class="nbtn" value="3">3</button>
-                    <button class="bbtn" value="+">+</button>
-              
-                    <button class="cbtn" value="ln">ln</button>
-                    <button class="nbtn" value="+/-">+/-</button>
-                    <button class="nbtn" value="0">0</button>
-                    <button class="nbtn">.</button>
-                    <button id="ebtn">=</button>
-                </div>
+
+                <button class="mbtn" id="mclr">MC</button>
+                <button class="mbtn" id="mr">MR</button>
+                <button class="mbtn" id="mplus">M+</button>
+                <button class="mbtn" id="mminus">M-</button>
+                <button class="mbtn" id="ms">MS</button>
+
+                <button class="cbtn">2<sup>nd</sup></button>
+                <button class="cbtn" value="3.14">&pi;</button>
+                <button class="cbtn" id="e_btn">e</button>
+                <button id="clear">C</button>
+                <button id="backspace">&#x232b;</button>
+
+                <button class="cbtn" id="x2">x<sup>2</sup></button>
+                <button class="cbtn" id="1/x">1/x</button>
+                <button class="cbtn" id="abs">|x|</button>
+                <button class="cbtn" id="exp">exp</button>
+                <button class="cbtn" value="%">mod</button>
+
+                <button class="cbtn" id="sqrt">&radic;x</button>
+                <button class="cbtn" value="(">(</button>
+                <button class="cbtn" value=")">)</button>
+                <button class="cbtn" id="n!">&#119899;!</button>
+                <button class="bbtn" value="/">÷</button>
+
+                <button class="cbtn" id="x^y" value="**">x<sup>y</sup></button>
+                <button class="nbtn" value="7">7</button>
+                <button class="nbtn" value="8">8</button>
+                <button class="nbtn" value="9">9</button>
+                <button class="bbtn" value="*">x</button>
+
+                <button class="cbtn" id="powerof10">10<sup>x</sup></button>
+                <button class="nbtn" value="4">4</button>
+                <button class="nbtn" value="5">5</button>
+                <button class="nbtn" value="6">6</button>
+                <button class="bbtn" value="-">-</button>
+
+                <button class="cbtn" id="log">log</button>
+                <button class="nbtn" value="1">1</button>
+                <button class="nbtn" value="2">2</button>
+                <button class="nbtn" value="3">3</button>
+                <button class="bbtn" value="+">+</button>
+
+                <button class="cbtn" id="ln">ln</button>
+                <button class="nbtn" id="signChange">+/-</button>
+                <button class="nbtn" id="zero" value="0">0</button>
+                <button class="nbtn" id=".">.</button>
+                <button id="ebtn">=</button>
             </div>
         </div>
     </div>
 
-    <script src="index.js"></script>
+    <script src="./js/index.js" type="module"></script>
+    <script src="./js/eventListeners.js" type="module"></script>
+    <script src="./js/memoryFunc.js" type="module"></script>
+    <script src="./js/calculator.js" type="module"></script>
+    <script src="./js/theme.js"></script>
 </body>
 
 </html>
