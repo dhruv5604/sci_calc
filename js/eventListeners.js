@@ -132,12 +132,10 @@ deg.addEventListener("click", () => {
         deg.value = "enable";
         deg.style.background = "#000";
         deg.style.color = "#fff";
-        console.log("enable")
     }
     else if(deg.value == "enable"){
         deg.value = "disable";
         deg.style.background = "#fcfcfc";
         deg.style.color = "#000";
-        console.log("disable")
     }
 })

@@ -31,61 +31,37 @@ class Calculator {
         const redianValue = this.toRadians(value);
         switch (func) {
             case 'sin':
-                if(deg.value == "enable"){
-                    result = Math.sin(redianValue).toFixed(2);
-                }else{
-                    result = Math.sin(value).toFixed(2);
-                }
+                result = (deg.value == "enable") ? Math.sin(redianValue).toFixed(2) : Math.sin(value).toFixed(2);
                 tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
 
             case 'cos':
-                if(deg.value == "enable"){
-                    result = Math.cos(redianValue).toFixed(2);
-                }else{
-                    result = Math.cos(value).toFixed(2);
-                }
+                result = (deg.value == "enable") ? Math.cos(redianValue).toFixed(2) : Math.cos(value).toFixed(2);
                 tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
 
             case 'tan':
-                if(deg.value == "enable"){
-                    result = Math.tan(redianValue).toFixed(2);
-                }else{
-                    result = Math.tan(value).toFixed(2);
-                }
+                result = (deg.value == "enable") ? Math.tan(redianValue).toFixed(2) : Math.tan(value).toFixed(2);
                 tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
 
             case 'cot':
-                if(deg.value == "enable"){
-                    result = (1 / (Math.tan(redianValue))).toFixed(2);
-                }else{
-                    result = (1 / (Math.tan(value))).toFixed(2);
-                }
+                result = (deg.value == "enable") ? (1 / (Math.tan(redianValue))).toFixed(2) : Math.tan(value).toFixed(2);
                 tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
 
             case 'sec':
-                if(deg.value == "enable"){
-                    result = (1 / (Math.cos(redianValue))).toFixed(2);
-                }else{
-                    result = (1 / (Math.cos(value))).toFixed(2);
-                }
+                result = (deg.value == "enable") ? (1 / (Math.cos(redianValue))).toFixed(2) : Math.cos(value).toFixed(2);
                 tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
 
             case 'cosec':
-                if(deg.value == "enable"){
-                    result = (1 / (Math.sin(redianValue))).toFixed(2);
-                }else{
-                    result = (1 / (Math.sin(value))).toFixed(2);
-                }
+                result = (deg.value == "enable") ? (1 / (Math.sin(redianValue))).toFixed(2) : Math.sin(value).toFixed(2);
                 tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
