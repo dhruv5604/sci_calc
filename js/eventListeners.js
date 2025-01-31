@@ -1,4 +1,4 @@
-import { input, output, equal, btns, clear, select, backspace } from './index.js'
+import { input, output, equal, btns, clear, select, backspace, deg } from './index.js'
 import { Calculator } from './calculator.js';
 import { mr, ms, mplus, mminus, mclr } from './memoryFunc.js';
 
@@ -92,8 +92,12 @@ for (let btn of btns) {
         if (input.value == 0) {
             input.value = "";
         }
-
-        input.value += e.target.value;
+        if(btn.id != "degrad"){
+            input.value += e.target.value;
+        }else{
+            input.value = 0
+        }
+        
     })
 }
 
@@ -121,4 +125,19 @@ select.addEventListener("change", () => {
 
 backspace.addEventListener("click", () => {
     input.value = input.value.slice(0, input.value.length - 1);
+})
+
+deg.addEventListener("click", () => {
+    if(deg.value == "disable"){
+        deg.value = "enable";
+        deg.style.background = "#000";
+        deg.style.color = "#fff";
+        console.log("enable")
+    }
+    else if(deg.value == "enable"){
+        deg.value = "disable";
+        deg.style.background = "#fcfcfc";
+        deg.style.color = "#000";
+        console.log("disable")
+    }
 })
