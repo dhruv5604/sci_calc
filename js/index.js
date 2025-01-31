@@ -1,12 +1,12 @@
 import { Calculator } from './calculator.js'
 
-var input = document.getElementById("ip");
-var output = document.getElementById("op");
-let equal = document.getElementById("ebtn");
-let btns = document.querySelectorAll("button")
-let clear = document.getElementById("clear");
-let select = document.getElementById("trigonometry");
-let backspace = document.getElementById("backspace");
+const input = document.getElementById("ip");
+const output = document.getElementById("op");
+const equal = document.getElementById("ebtn");
+const btns = document.querySelectorAll("button")
+const clear = document.getElementById("clear");
+const select = document.getElementById("trigonometry");
+const backspace = document.getElementById("backspace");
 
 Calculator.prototype.abs = (expression) => {
     let lastNum = getLastNumber(expression)
@@ -66,7 +66,7 @@ Calculator.prototype.powerof10 = (expression) => {
 Calculator.prototype.ln = (expression) => {
     let lastNum = getLastNumber(expression)
     let result = Math.LN2 * (lastNum);
-    let tempInput = input.value.slice(0,input.value.length - lastNum.length);
+    let tempInput = input.value.slice(0, input.value.length - lastNum.length);
     input.value = tempInput + result.toFixed(4);
 }
 

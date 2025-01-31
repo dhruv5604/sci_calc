@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".contanier");
     const buttons = document.querySelectorAll("button");
     const inputFields = document.querySelectorAll("input[type=text]");
-    
+
     // Check local storage for theme preference
     if (localStorage.getItem("theme") === "dark") {
         body.classList.add("dark-mode");
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         inputFields.forEach(input => input.style.backgroundColor = "#");
         toggleSwitch.checked = true;
     }
-    
+
     toggleSwitch.addEventListener("change", function () {
         if (this.checked) {
             body.classList.add("dark-mode");

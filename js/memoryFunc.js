@@ -1,4 +1,4 @@
-import { input } from "./index.js";
+import { input, output } from "./index.js";
 import { Calculator } from "./calculator.js"
 
 //Memory Store: stores output to memory/localstorage
@@ -28,6 +28,8 @@ function mminus() {
 //Memory Clear:sets the memory to 0
 function mclr() {
     localStorage.setItem("Memory", 0)
+    input.value = 0;
+    output.value = "";
 }
 
-export {ms,mr,mplus,mminus,mclr}
+export { ms, mr, mplus, mminus, mclr }

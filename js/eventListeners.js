@@ -31,12 +31,11 @@ for (let btn of btns) {
         //func for ln
         if (btn.id == "ln") {
             let result = Math.LN2;
-            if(input.value == "0"){
+            if (input.value == "0") {
                 input.value = result.toFixed(4);
-            }else{
+            } else {
                 calc.ln(input.value);
             }
-            
         }
 
         //func for factorial
@@ -65,32 +64,32 @@ for (let btn of btns) {
         }
 
         //func for e
-        if(btn.id == "e_btn"){
+        if (btn.id == "e_btn") {
             calc.e_btn(input.value);
         }
 
         //func for MS
-        if(btn.id == "ms"){
+        if (btn.id == "ms") {
             ms();
         }
 
         //func for MR
-        if(btn.id == "mr"){
+        if (btn.id == "mr") {
             mr();
         }
 
         //func for Mplus
-        if(btn.id == "mplus"){
+        if (btn.id == "mplus") {
             mplus();
         }
 
         //func for Mminus
-        if(btn.id == "mminus"){
+        if (btn.id == "mminus") {
             mminus();
         }
 
         //func for Mclr
-        if(btn.id == "mclr"){
+        if (btn.id == "mclr") {
             mclr();
         }
 

@@ -26,43 +26,46 @@ class Calculator {
     trigonometry(func) {
         let temp = input.value + func;
         let value = this.extractNumberBeforeTrig(temp);
+        let result = ""
+        let tempInput = ""
+        let redianValue = this.toRadians(value);
         switch (func) {
-            case 'sin': {
-                let result = Math.sin(this.toRadians(value)).toFixed(2);
-                let tempInput = input.value.slice(0, input.value.length - value.length);
+            case 'sin':
+                result = Math.sin(redianValue).toFixed(2);
+                tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
-            }
-            case 'cos': {
-                let result = Math.cos(this.toRadians(value)).toFixed(2);
-                let tempInput = input.value.slice(0, input.value.length - value.length);
+
+            case 'cos':
+                result = Math.cos(redianValue).toFixed(2);
+                tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
-            }
-            case 'tan': {
-                let result = Math.tan(this.toRadians(value)).toFixed(2);
-                let tempInput = input.value.slice(0, input.value.length - value.length);
+
+            case 'tan':
+                result = Math.tan(redianValue).toFixed(2);
+                tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
-            }
-            case 'cot': {
-                let result = 1 / (Math.tan(this.toRadians(value)).toFixed(2));
-                let tempInput = input.value.slice(0, input.value.length - value.length);
+
+            case 'cot':
+                result = 1 / (Math.tan(redianValue).toFixed(2));
+                tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
-            }
-            case 'sec': {
-                let result = 1 / (Math.cos(this.toRadians(value)).toFixed(2));
-                let tempInput = input.value.slice(0, input.value.length - value.length);
+
+            case 'sec':
+                result = 1 / (Math.cos(redianValue).toFixed(2));
+                tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
-            }
-            case 'cosec': {
-                let result = 1 / (Math.sin(this.toRadians(value)).toFixed(2));
-                let tempInput = input.value.slice(0, input.value.length - value.length);
+
+            case 'cosec':
+                result = 1 / (Math.sin(redianValue).toFixed(2));
+                tempInput = input.value.slice(0, input.value.length - value.length);
                 input.value = tempInput + result;
                 break;
-            }
+
             default:
                 output.value = "Invalid Input"
         }
