@@ -7,85 +7,80 @@ for (let btn of btns) {
     btn.addEventListener("click", (e) => {
 
         let calc = new Calculator();
+        let id = btn.id;
 
-        // if x^2 is pressed then this func is called
-        if (btn.id == "x2") {
-            calc.square(input.value);
-        }
+        switch (id) {
+            case 'x2':
+                calc.square(input.value);
+                break;
 
-        //func for sqrt
-        if (btn.id == "sqrt") {
-            calc.sqrt(input.value);
-        }
+            case 'sqrt':
+                calc.sqrt(input.value);
+                break;
 
-        //func for abs value
-        if (btn.id == "abs") {
-            calc.abs(input.value);
-        }
+            case 'abs':
+                calc.abs(input.value);
+                break;
 
-        //func for log
-        if (btn.id == "log") {
-            calc.logNum(input.value);
-        }
+            case 'log':
+                calc.logNum(input.value);
+                break;
 
-        //func for ln
-        if (btn.id == "ln") {
-            let result = Math.LN2;
-            if (input.value == "0") {
-                input.value = result.toFixed(4);
-            } else {
-                calc.ln(input.value);
-            }
-        }
+            case 'ln':
+                let result = Math.LN2;
+                if (input.value == "0") {
+                    input.value = result.toFixed(4);
+                } else {
+                    calc.ln(input.value);
+                }
 
-        //func for factorial
-        if (btn.id == "n!") {
-            calc.fact(input.value);
-        }
+            case 'n!':
+                calc.fact(input.value);
+                break;
 
-        //func for exponential
-        if (btn.id == "exp") {
-            calc.exp(input.value)
-        }
+            case 'exp':
+                calc.exp(input.value);
+                break;
 
-        //func for divide by number
-        if (btn.id == "1/x") {
-            calc.onebyx(input.value);
-        }
+            case '1/x':
+                calc.onebyx(input.value);
+                break;
 
-        //func for powerof10
-        if (btn.id == "powerof10") {
-            calc.powerof10(input.value);
-        }
+            case 'powerof10':
+                calc.powerof10(input.value);
+                break;
 
-        //func for changing the sign of output
-        if (btn.id == "signChange") {
-            output.value = String(Number(output.value) * -1)
-        }
+            case 'signChange':
+                output.value = String(Number(output.value) * -1)
+                break;
 
-        //func for e
-        if (btn.id == "e_btn") {
-            calc.e_btn(input.value);
-        }
+            case 'e_btn':
+                calc.e_btn(input.value);
+                break;
 
-        //func for MS
-        if (btn.id == "ms") {
-            ms();
-        }
+            case 'ms':
+                ms();
+                break;
 
-        //func for MR
-        if (btn.id == "mr") {
-            mr();
-        }
+            case 'mr':
+                mr();
+                break;
 
-        //func for Mplus
-        if (btn.id == "mplus") {
-            mplus();
-        }
+            case 'mplus':
+                mplus();
+                break;
 
-        //func for Mminus
-        if (btn.id == "mminus") {
-            mminus();
+            case 'mminus':
+                mminus();
+                break;
+
+            case 'ms':
+                ms();
+                break;
+
+            case 'mclr':
+                mclr();
+                break;
         }
 
         //func for Mclr
