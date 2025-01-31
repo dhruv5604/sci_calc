@@ -6,30 +6,25 @@ import { mr, ms,mplus,mminus,mclr } from './memoryFunc.js';
 for (let btn of btns) {
     btn.addEventListener("click", (e) => {
 
-        //if initially input is 0 then make it empty
-        
+        let calc = new Calculator();
 
         // if x^2 is pressed then this func is called
         if (btn.id == "x2") {
-            let calc = new Calculator();
             calc.square(input.value);
         }
 
         //func for sqrt
         if (btn.id == "sqrt") {
-            let calc = new Calculator();
             calc.sqrt(input.value);
         }
 
         //func for abs value
         if (btn.id == "abs") {
-            let calc = new Calculator();
             calc.abs(input.value);
         }
 
         //func for log
         if (btn.id == "log") {
-            let calc = new Calculator();
             calc.logNum(input.value);
         }
 
@@ -41,25 +36,21 @@ for (let btn of btns) {
 
         //func for factorial
         if (btn.id == "n!") {
-            let calc = new Calculator();
             calc.fact(input.value);
         }
 
         //func for exponential
         if (btn.id == "exp") {
-            let calc = new Calculator();
             calc.exp(input.value)
         }
 
         //func for divide by number
         if (btn.id == "1/x") {
-            let calc = new Calculator();
             calc.onebyx(input.value);
         }
 
         //func for powerof10
         if (btn.id == "powerof10") {
-            let calc = new Calculator();
             calc.powerof10(input.value);
         }
 
@@ -70,7 +61,6 @@ for (let btn of btns) {
 
         //func for e
         if(btn.id == "e_btn"){
-            let calc = new Calculator();
             calc.e_btn(input.value);
         }
 
@@ -99,20 +89,12 @@ for (let btn of btns) {
             mclr();
         }
 
-        // if(btn.id == "."){
-        //     if(input.value == 0){
-        //         input.value = "0.";
-        //     }
-        // }
-
         //if initial value is 0
         if (input.value == 0) {
             input.value = "";
         }
 
         input.value += e.target.value;
-
-        
     })
 }
 

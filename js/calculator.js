@@ -25,7 +25,6 @@ class Calculator {
 
     trigonometry(func) {
         let temp = input.value + func;
-        // console.log(temp)
         let value = this.extractNumberBeforeTrig(temp);
         switch (func) {
             case 'sin': {
@@ -69,7 +68,7 @@ class Calculator {
         }
     }
 
-    e_btn(expression){
+    e_btn(expression) {
         let lastNum = getLastNumber(expression)
         let result = Math.pow(Math.E, lastNum).toFixed(4);
         let tempInput = input.value.slice(0, input.value.length - lastNum.length);
