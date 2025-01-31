@@ -63,6 +63,13 @@ Calculator.prototype.powerof10 = (expression) => {
     input.value = tempInput + result;
 }
 
+Calculator.prototype.ln = (expression) => {
+    let lastNum = getLastNumber(expression)
+    let result = Math.LN2 * (lastNum);
+    let tempInput = input.value.slice(0,input.value.length - lastNum.length);
+    input.value = tempInput + result.toFixed(4);
+}
+
 function getLastNumber(expression) {
     let parts = expression.split(/[^0-9]/); // Split by any non-numeric character
     return parts.filter(num => num !== "").pop(); // Get the last valid number

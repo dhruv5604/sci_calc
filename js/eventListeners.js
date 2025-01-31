@@ -1,6 +1,6 @@
 import { input, output, equal, btns, clear, select, backspace } from './index.js'
 import { Calculator } from './calculator.js';
-import { mr, ms,mplus,mminus,mclr } from './memoryFunc.js';
+import { mr, ms, mplus, mminus, mclr } from './memoryFunc.js';
 
 //Adding click event for all the buttons
 for (let btn of btns) {
@@ -31,7 +31,12 @@ for (let btn of btns) {
         //func for ln
         if (btn.id == "ln") {
             let result = Math.LN2;
-            input.value += result.toFixed(4);
+            if(input.value == "0"){
+                input.value = result.toFixed(4);
+            }else{
+                calc.ln(input.value);
+            }
+            
         }
 
         //func for factorial
