@@ -17,15 +17,15 @@ Calculator.prototype.abs = (expression) => {
 
 Calculator.prototype.logNum = (expression) => {
     let lastNum = getLastNumber(expression)
-    let result = Math.log(lastNum);
-    let tempInput = input.value.slice(0, input.value.length - lastNum.length).toFixed(4);
+    let result = Math.log(lastNum).toFixed(4);
+    let tempInput = input.value.slice(0, input.value.length - lastNum.length);
     input.value = tempInput + result;
 }
 
 Calculator.prototype.sqrt = (expression) => {
     let lastNum = getLastNumber(expression)
-    let result = Math.sqrt(lastNum);
-    let tempInput = input.value.slice(0, input.value.length - lastNum.length).toFixed(4);
+    let result = Math.sqrt(lastNum).toFixed(4);
+    let tempInput = input.value.slice(0, input.value.length - lastNum.length);
     input.value = tempInput + result;
 }
 

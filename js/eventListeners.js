@@ -39,62 +39,80 @@ for (let btn of btns) {
             input.value += result.toFixed(4);
         }
 
+        //func for factorial
         if (btn.id == "n!") {
             let calc = new Calculator();
             calc.fact(input.value);
         }
 
+        //func for exponential
         if (btn.id == "exp") {
             let calc = new Calculator();
             calc.exp(input.value)
         }
 
+        //func for divide by number
         if (btn.id == "1/x") {
             let calc = new Calculator();
             calc.onebyx(input.value);
         }
 
+        //func for powerof10
         if (btn.id == "powerof10") {
             let calc = new Calculator();
             calc.powerof10(input.value);
         }
 
+        //func for changing the sign of output
         if (btn.id == "signChange") {
             output.value = String(Number(output.value) * -1)
         }
 
+        //func for e
         if(btn.id == "e_btn"){
             let calc = new Calculator();
             calc.e_btn(input.value);
         }
 
+        //func for MS
         if(btn.id == "ms"){
             ms();
         }
+
+        //func for MR
         if(btn.id == "mr"){
             mr();
         }
+
+        //func for Mplus
         if(btn.id == "mplus"){
             mplus();
         }
+
+        //func for Mminus
         if(btn.id == "mminus"){
             mminus();
         }
+
+        //func for Mclr
         if(btn.id == "mclr"){
             mclr();
         }
 
-        if(btn.id == "."){
-            if(input.value == 0){
-                input.value = "0.";
-            }
+        // if(btn.id == "."){
+        //     if(input.value == 0){
+        //         input.value = "0.";
+        //     }
+        // }
+
+        //if initial value is 0
+        if (input.value == 0) {
+            input.value = "";
         }
 
         input.value += e.target.value;
 
-        if (input.value.length == 0) {
-            input.value = "";
-        }
+        
     })
 }
 
