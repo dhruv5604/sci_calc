@@ -15,10 +15,16 @@ class Calculator {
     }
     
     square(expression) {
-        let lastNum = getLastNumber(expression)
-        let result = Math.pow(lastNum, 2);
-        let tempInput = input.value.slice(0, input.value.length - lastNum.length);
-        input.value = tempInput + result;
+        try{
+            let lastNum = getLastNumber(expression)
+            if(lastNum === null) throw new Error("Invalid Number");
+            let result = Math.pow(lastNum, 2);
+            let tempInput = input.value.slice(0, input.value.length - lastNum.length);
+            input.value = tempInput + result;
+        }
+        catch(error){
+            document.getElementById("error").innerHTML = `Error : ${error.message}`;
+        }
     }
 
     toRadians(angle) {
