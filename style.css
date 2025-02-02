@@ -122,3 +122,9 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+#error{
+    color: red;
+    display: flex;
+    justify-content: center;
+}

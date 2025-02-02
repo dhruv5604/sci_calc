@@ -97,16 +97,17 @@ for (let btn of btns) {
 }
 
 //adding event listener to equal button
-equal.addEventListener("click", (e) => {
+equal.addEventListener("click", () => {
     // console.log("hello")
     let calc = new Calculator(input);
-    calc.evaluate(input.value, e);
+    calc.evaluate(input.value);
 })
 
 //adding event listener to clear button
 clear.addEventListener("click", () => {
     input.value = "";
     output.value = "";
+    document.getElementById("error").innerHTML = "";
 })
 
 select.addEventListener("change", () => {

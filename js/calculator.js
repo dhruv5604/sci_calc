@@ -1,12 +1,19 @@
 import { input, output, getLastNumber, deg } from "./index.js";
 
 class Calculator {
-
-    evaluate(expression, e) {
-        let result = eval(input.value);
-        output.value = result;
+    
+    evaluate(expression) {
+        try{
+            if(!expression || expression.trim() === "") throw new Error("Enter some operation")
+            let result = eval(expression);
+            if (!isFinite(result)) throw new Error("Math Error");
+            output.value= result;
+        }
+        catch(error){
+            document.getElementById("error").innerHTML = `Error : ${error.message}`;
+        }
     }
-
+    
     square(expression) {
         let lastNum = getLastNumber(expression)
         let result = Math.pow(lastNum, 2);
